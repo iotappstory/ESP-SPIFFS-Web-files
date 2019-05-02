@@ -1,0 +1,16 @@
+<div class="page_cnt">
+	<h1>Local Firmware update</h1></br>
+	<p>If the need rises you can upload new firmware directly from the config pages.</p></br>
+	<h2>Out Of Sync</h2>
+	<p>After updating from a local source your device will be out of sync with IOTAppStory.com. So as soon as you are back in the connected world you will have to re-sync your device from the Control Panel to resume normal over the air updates.</p>
+	</br><hr></br>
+	<form name="form_lclUpl" action="/update" id="form_lclUpl" method="post" enctype="multipart/form-data">
+		<input id="f" name="f" type="file" accept=".bin" multiple style="display:none;">
+		<label>Firmware name</label><input type="text" id="n" name="n" required>
+		</br></br>
+		<div class="btn_bar_cnt">
+			<button class="button" id="uploadFirm" type="button">Select & Upload</button>
+		</div>
+		</br></br>
+	</form>
+</div>

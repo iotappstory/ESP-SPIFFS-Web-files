@@ -1,0 +1,18 @@
+<div class="page_cnt">
+	<h1>Root Certificates</h1></br>
+	<p>We use a root certificate on the ESP32 for setting up https communication with IAS.</p></br>
+	<h2>Current certificates</h2></br>
+	<table class="scanRes certList"></table>	
+	<form name="form_certSave" action="/certupl" id="form_certSave" method="post" enctype="multipart/form-data">
+		<input id="f" name="f" type="file" accept=".cer,.ar" multiple style="display:none;">
+		<label>new Certificate</label>
+		<br><br>
+		<p>Base64 encoded X.509 (.cer) Learn how to get them <a href="https://youtu.be/Wm1xKj4bKsY?t=870" target="_blank">here</a>.</p>
+		<p>You can upload more than 1 certificate. And use them for your own connections.</p>
+		<div class="btn_bar_cnt">
+			<button class="button" id="getCertFromIAS" type="button">Get IAS root cert.</button>
+			<button class="button" id="uploadCert" type="button">Upload my own</button>
+		</div>
+		<br><br>
+	</form>
+</div>
