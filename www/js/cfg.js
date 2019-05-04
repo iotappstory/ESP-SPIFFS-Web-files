@@ -40,7 +40,7 @@ boardInfo(function(){
 		// load xtra css & js files. When finished setup the page layout
 		loader = setInterval(function(){
 			loadFileArrays(setupPageLayout);
-		}, 50);
+		}, 100);
 	}else{
 		setupPageLayout();
 	}
@@ -264,7 +264,7 @@ function pageBuilder(){
 	// load dependencys
 	loader = setInterval(function(){
 		loadFileArrays();
-	}, 50);
+	}, 100);
 	
 	// add on click listener to the mob button(hamburger) pulldown
 	document.querySelector("nav .mobMenuBtn").addEventListener("click", btnMainNavMob);
@@ -466,6 +466,10 @@ function btnMainNavExit(){
 	// if this device browser supports it: vibrate
 	if(typeof navigator.vibrate === "function"){ navigator.vibrate(35); }
 	
+	if(mobMenu == true){
+		mobMenuHide();
+	}
+	
 	dialog("Exit", "Are you sure you want to exit config mode?",
 		function(){
 			
@@ -487,10 +491,6 @@ function btnMainNavExit(){
 			}, 5000);
 		}
 	);
-	
-	if(mobMenu == true){
-		mobMenuHide();
-	}
 }
 
 // button func show / hide mob menu
@@ -853,7 +853,7 @@ function openPopup(title, content, eclass=""){
 	}
 	
 	// popup html
-	popup.innerHTML = '<h1>'+ title +'</h1><div class="closePop"><a href="#"><img src="https://iotappstory.com/img/close.png" alt="Close"></a></div>' + content;
+	popup.innerHTML = '<h1>'+ title +'</h1><div class="closePop"><a href="#"><img src="img/close.png" alt="Close"></a></div>' + content;
 	
 	// create popup listener close popup
 	popup.querySelector(".closePop").addEventListener("click", function(){
