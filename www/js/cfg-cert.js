@@ -88,7 +88,7 @@ function btnDelCert(){
 	var thisVal = event.path[2].getAttribute('data-del');
 
 	// delete thisVal and get certificate scan results
-	devComm("/csr?d="+thisVal, "GET", "", "text", function(ret){
+	devComm("/csr", "GET", {"d":thisVal}, "text", function(ret){
 		if(ret != ""){
 			certScanToTable(ret);
 		}else{
